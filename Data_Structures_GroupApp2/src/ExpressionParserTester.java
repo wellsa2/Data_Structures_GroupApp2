@@ -2,8 +2,13 @@
 public class ExpressionParserTester {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		ExpressionParser expressionParser = new ExpressionParser();
+		for (String expression : expressionParser.getExpressions()) {
+			System.out.println(expression);
+		}
+		for (Character c : ExpressionParser.stringToArray(expressionParser.getExpressionAt(50))) {
+			System.out.println(c);
+		}
 	}
 
 }
