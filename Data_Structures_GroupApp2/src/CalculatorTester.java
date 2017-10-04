@@ -20,20 +20,7 @@ public class CalculatorTester {
 		System.out.println("\n----------\nTesting String constructor");
 		String equation1 = "(5*5*2*2)-(2*5)-(5*2*(2+3+4))";
 		Calculator calc1 = new Calculator(equation1);
-		ArrayList<String> expected1 = new ArrayList<String>();
-		for(int i = 0; i < equation1.length(); i++) {
-			expected1.add(equation1.substring(i, i+1));
-		}//end for
-		ArrayList<String> result1 = calc1.getEquationList();
-		//TODO: wait for ExpressionParser to be completed. then uncomment printTest
-		//printTest(true, "Testing String constructor with String " + equation1 + ". ArrayList is", result1.toString(), expected1.toString());
-		
-		System.out.println("\n----------\nTesting ArrayList<String> constructor");
-		ArrayList<String> equation2 = expected1;
-		Calculator calc2 = new Calculator(equation2);
-		String expected2 = "(5*5*2*2)-(2*5)-(5*2*(2+3+4))";
-		String result2 = calc2.getEquationString();
-		printTest(true, "Testing ArrayList constructor with ArrayList" + equation2 + ". String is", result2, expected2);
+		printTest(true, "Testing String constructor with equation " + equation1, equation1, calc1.getEquationString());
 	}//end testConstructors()
 	
 	private static void testGetters() {
@@ -44,9 +31,6 @@ public class CalculatorTester {
 			equationList.add(equation.substring(i, i+1));
 		}//end for
 		Calculator calc = new Calculator(equation);
-		System.out.println("\n----------\nTesting getEquationList()");
-		//TODO: wait for ExpressionParser to be completed. then uncomment printTest
-		//printTest(true, "Testing getEquationList() with equation " + equation, equationList.toString(), calc.getEquationList().toString());
 		System.out.println("\n----------\nTesting getEquationString()");
 		printTest(true, "Testing getEquationString() with equation " + equation, equation, calc.getEquationString());
 		System.out.println("\n----------\nTesting getResult()");

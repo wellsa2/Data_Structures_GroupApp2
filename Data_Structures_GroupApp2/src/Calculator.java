@@ -4,38 +4,42 @@ import java.util.ArrayList;
 public class Calculator {
 	
 	private String equationString;
-	private ArrayList<String> equationList;
 	private Boolean initialized;
-	
+	private final char[] signs = {'(', ')', '*', '/', '+', '-'};
 	public Calculator() {
 		initialized = false;
 	}//end Constructor
 	
 	public Calculator(String toParse) {
 		equationString = toParse;
-		equationList = ExpressionParser.StringToArray(toParse);
 		initialized = true;
 	}//end Constructor
-	
-	public Calculator(ArrayList<String> input) {
-		equationList = input;
-		StringBuffer sb = new StringBuffer();
-		for(String numsAndSigns : input) {
-			sb.append(numsAndSigns);
-		}//end for
-		equationString = sb.toString();
-		initialized = true;
-	}//end Constructor
-	
-	public ArrayList<String> getEquationList(){
-		return equationList;
-	}//end getEquationList
+
 	
 	public String getEquationString() {
+		checkInitialization();
 		return equationString;
 	}//end getEquationString
+	
 	public String getResult() {
 		checkInitialization();
+		VectorStack<Character> operands = new VectorStack<Character>();
+		VectorStack<Integer> numbers = new VectorStack<Integer>();
+		boolean lastWasNum = false;
+		char current;
+		for(int i = 0; i < equationString.length(); i++) {
+			current = equationString.charAt(i);
+			if(lastWasNum) {
+				if(Character.isDigit(current)) {
+					int toFormat = operands.pop();
+				}else if(/*signs contains current. delete true*/true) {
+					
+				}
+			}else {
+				
+			}
+			
+		}
 		return "";
 		
 	}//end getResult
@@ -44,6 +48,7 @@ public class Calculator {
 		checkInitialization();
 		return equationString + " = " + getResult();
 	}//end toString
+	
 	
 	private void checkInitialization() {
 		if (!initialized)
