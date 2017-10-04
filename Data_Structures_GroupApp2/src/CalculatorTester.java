@@ -12,7 +12,7 @@ public class CalculatorTester {
 		testConstructors();
 		testGetters();
 		testToString();
-	}
+	}//end main
 
 	private static void testConstructors() {
 		System.out.println("\n----------\nTesting default constructor");
@@ -23,7 +23,7 @@ public class CalculatorTester {
 		ArrayList<String> expected1 = new ArrayList<String>();
 		for(int i = 0; i < equation1.length(); i++) {
 			expected1.add(equation1.substring(i, i+1));
-		}
+		}//end for
 		ArrayList<String> result1 = calc1.getEquationList();
 		//TODO: wait for ExpressionParser to be completed. then uncomment printTest
 		//printTest(true, "Testing String constructor with String " + equation1 + ". ArrayList is", result1.toString(), expected1.toString());
@@ -34,7 +34,7 @@ public class CalculatorTester {
 		String expected2 = "(5*5*2*2)-(2*5)-(5*2*(2+3+4))";
 		String result2 = calc2.getEquationString();
 		printTest(true, "Testing ArrayList constructor with ArrayList" + equation2 + ". String is", result2, expected2);
-	}
+	}//end testConstructors()
 	
 	private static void testGetters() {
 		System.out.println("\n----------\nTesting getters");
@@ -42,7 +42,7 @@ public class CalculatorTester {
 		ArrayList<String> equationList = new ArrayList<String>();
 		for(int i = 0; i < equation.length(); i++) {
 			equationList.add(equation.substring(i, i+1));
-		}
+		}//end for
 		Calculator calc = new Calculator(equation);
 		System.out.println("\n----------\nTesting getEquationList()");
 		//TODO: wait for ExpressionParser to be completed. then uncomment printTest
@@ -53,7 +53,7 @@ public class CalculatorTester {
 		String expected = Integer.toString((5*5*2*2)-(2*5)-(5*2*(2+3+4)));
 		String result = calc.getResult();
 		printTest(true, "Testing getResult() with equation " + equation, result, expected);
-	}
+	}//end testGetters()
 	
 	private static void testToString() {
 		System.out.println("\n----------\nTesting toString();");
@@ -62,9 +62,9 @@ public class CalculatorTester {
 		String result = calc.toString();
 		String expected = "(5*5*2*2)-(2*5)-(5*2*(2+3+4)) = 0";
 		printTest(true, "testing toString() with valid equation " + equation, result, expected);
-	}
+	}//end tesToString
 	
 	private static void printTest(boolean isValid, String description, String recieved, String expected) {
 		System.out.println(String.format("Is Valid: %s%nDescription: %s%nRecieved: %s%nExpected: %s%n", isValid, description, recieved, expected));
-	}
+	}//end printTest()
 }
