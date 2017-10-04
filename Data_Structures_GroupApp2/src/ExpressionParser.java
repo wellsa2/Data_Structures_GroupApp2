@@ -1,31 +1,62 @@
 import java.util.ArrayList;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+import java.lang.Character;
+import java.util.Arrays;
 
 public class ExpressionParser {
 	
-	private ArrayList<String> Expressions;
+	private ArrayList<String> expressions;
+	private boolean initialized;
+
+
 	public ExpressionParser() {
-		//takes file
+		this(System.getProperty("user.dir") + "/Infix Calculator Expressions - valid -- 2016-10-13 01.txt");
 	}
-	
+
+
+	public ExpressionParser(String expressionTextFile) {
+
+		expressions = new ArrayList<>();
+
+		try {
+			Scanner scanner = new Scanner(new FileReader(expressionTextFile));
+			System.out.println("File " + expressionTextFile + " found!");
+
+			while (scanner.hasNextLine()) {
+				expressions.add(scanner.nextLine());
+			}
+			initialized = true;
+		}
+		catch (FileNotFoundException fileNotFound) {
+			System.out.println("File " + expressionTextFile + " not found!");
+			initialized = false;
+		}
+	}
+
+
 	public ArrayList<String> getExpressions() {
-		return Expressions;
+		ArrayList<String> returnArray = new ArrayList<>();
+
+		for (String expression : expressions) {
+			returnArray.add(expression);
+		}
+		return returnArray;
 		
 	}
-	
+
+
 	public String getExpressionAt(int i) {
-		return null;
-		
+		return expressions.get(i);
 	}
-	
-	public static ArrayList<String> StringToArray(String s){
-		return null;
-		
-	}
-	
+
+
 	public String toString() {
-		return null;
-		
+		String resultString = "";
+		for (String expression : expressions) {
+			resultString += expression;
+		}
+		return resultString;
 	}
-	
-	
 }
