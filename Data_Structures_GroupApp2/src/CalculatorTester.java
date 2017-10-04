@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author horowitzb
+ *
+ */
 public class CalculatorTester {
 
 	public static void main(String[] args) {

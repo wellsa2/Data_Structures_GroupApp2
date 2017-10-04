@@ -29,11 +29,11 @@ public class Calculator {
 	
 	public ArrayList<String> getEquationList(){
 		return equationList;
-	}
+	}//end getEquationList
 	
 	public String getEquationString() {
 		return equationString;
-	}
+	}//end getEquationString
 	public String getResult() {
 		checkInitialization();
 		return "";
