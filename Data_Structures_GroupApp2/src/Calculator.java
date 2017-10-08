@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 
 //TODO: documentation, private methods, implementation, parenthesis, return invalid error as string 
 
@@ -44,6 +45,8 @@ public class Calculator
 		boolean valid = 			true ;	//set to false if given string is found to be an invalid equation
 		char current ;						//current character in iterator
 		boolean tempHasSignToCompare = false;
+		
+		try {
 		for ( int i = 0; i < equationString.length() && valid; i++ )
 		{
 			current = equationString.charAt( i ) ;
@@ -124,6 +127,11 @@ public class Calculator
 		while ( !operands.isEmpty() )
 		{
 			solveEquation( numbers, operands );
+		}//end while
+		}catch (ArithmeticException ae) {
+			return ae.toString();
+		}catch (EmptyStackException ese) {
+			return ese.toString();
 		}
 		return numbers.pop().toString() ;
 	}//end getResult
