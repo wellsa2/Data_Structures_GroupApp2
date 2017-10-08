@@ -121,7 +121,7 @@ public class Calculator
 				else if ( isSign( current ) )
 				{
 					valid = false ;
-					System.out.println( "Invalid expression entered." ) ;
+					return "Error: cannot have two adjacent signs";
 				}//end else if
 				else
 				{
@@ -136,7 +136,7 @@ public class Calculator
 		}catch (ArithmeticException ae) {
 			return ae.toString();
 		}catch (EmptyStackException ese) {
-			return ese.toString();
+			return ese.toString() + " Make sure all parenthesis have a matching pair";
 		}
 		return numbers.pop().toString() ;
 	}//end getResult
