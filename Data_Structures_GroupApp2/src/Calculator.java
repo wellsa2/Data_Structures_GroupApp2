@@ -65,7 +65,7 @@ public class Calculator
 				if ( Character.isDigit( current ) ) //multi-digit numbers
 				{
 					int toFormat = numbers.pop() ;
-					toFormat = toFormat * 10 + current ;
+					toFormat = toFormat * 10 + current - '0';
 					numbers.push( toFormat ) ;
 				}//end if
 				else if ( current == ')' )
@@ -121,7 +121,7 @@ public class Calculator
 				else if ( isSign( current ) )
 				{
 					valid = false ;
-					System.out.println( "Invalid expression entered." ) ;
+					return "Error: cannot have two adjacent signs";
 				}//end else if
 				else
 				{
@@ -136,7 +136,7 @@ public class Calculator
 		}catch (ArithmeticException ae) {
 			return ae.toString();
 		}catch (EmptyStackException ese) {
-			return ese.toString();
+			return ese.toString() + " Make sure all parenthesis have a matching pair";
 		}
 		return numbers.pop().toString() ;
 	}//end getResult
