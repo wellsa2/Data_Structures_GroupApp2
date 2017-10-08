@@ -27,6 +27,11 @@ public class Calculator
 		initialized = 		true ;
 	}//end Constructor
 
+	public void setEquationString(String equation) {
+		equationString = equation;
+		initialized = true;
+	}
+	
 	public String getEquationString()
 	{
 		checkInitialization() ;
