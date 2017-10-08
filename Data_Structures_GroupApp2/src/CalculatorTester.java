@@ -26,10 +26,6 @@ public class CalculatorTester {
 	private static void testGetters() {
 		System.out.println("\n----------\nTesting getters");
 		String equation = "(5*5*2*2)-(2*5)-(5*2*(2+3+4))";
-		ArrayList<String> equationList = new ArrayList<String>();
-		for(int i = 0; i < equation.length(); i++) {
-			equationList.add(equation.substring(i, i+1));
-		}//end for
 		Calculator calc = new Calculator(equation);
 		System.out.println("\n----------\nTesting getEquationString()");
 		printTest(true, "Testing getEquationString() with equation " + equation, equation, calc.getEquationString());

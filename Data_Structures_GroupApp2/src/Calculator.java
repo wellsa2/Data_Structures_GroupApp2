@@ -60,6 +60,14 @@ public class Calculator
 					toFormat = toFormat * 10 + current ;
 					numbers.push( toFormat ) ;
 				}//end if
+				else if ( current == ')' )
+				{
+					while ( operands.peek() != '(' )
+					{
+						solveEquation( numbers, operands );
+					}
+					operands.pop() ; //removes '(' from operands stack
+				}//end if
 				else if ( isSign( current ) )
 				{
 					lastWasNum = false ;
@@ -98,14 +106,6 @@ public class Calculator
 				else if ( current == '(' )
 				{
 					operands.push( current ) ;
-				}
-				else if ( current == ')' )
-				{
-					while ( operands.peek() != '(' )
-					{
-						solveEquation( numbers, operands );
-					}
-					operands.pop() ; //removes '(' from operands stack
 				}
 				else if ( isSign( current ) )
 				{
