@@ -65,7 +65,7 @@ public class Calculator
 				if ( Character.isDigit( current ) ) //multi-digit numbers
 				{
 					int toFormat = numbers.pop() ;
-					toFormat = toFormat * 10 + current ;
+					toFormat = toFormat * 10 + current - '0';
 					numbers.push( toFormat ) ;
 				}//end if
 				else if ( current == ')' )

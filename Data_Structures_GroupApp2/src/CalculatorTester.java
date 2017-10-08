@@ -34,22 +34,32 @@ public class CalculatorTester {
 		String result = calc.getResult();
 		printTest(true, "Testing getResult() with equation " + equation, result, expected);
 		
-		calc.setEquationString("1/0");
+		equation = "0 + 12345";
+		calc.setEquationString(equation);
+		expected = "12345";
+		result= calc.getResult();
+		printTest(true, "Testing getResult() with equation " + equation, result, expected);
+		
+		equation = "1/0";
+		calc.setEquationString(equation);
 		expected = "Java.lang.ArithmeticException: / by zero";
 		result= calc.getResult();
 		printTest(true, "Testing getResult() with equation " + equation, result, expected);
 		
-		calc.setEquationString("5++5");
+		equation = "5++5";
+		calc.setEquationString(equation);
 		expected = "Error: cannot have two adjacent signs";
 		result= calc.getResult();
 		printTest(true, "Testing getResult() with equation " + equation, result, expected);
 		
-		calc.setEquationString("5+7)");
+		equation = "5+7)";
+		calc.setEquationString(equation);
 		expected = "java.util.EmptyStackException Make sure all parenthesis have a matching pair";
 		result= calc.getResult();
 		printTest(true, "Testing getResult() with equation " + equation, result, expected);
 		
-		calc.setEquationString("(5+7");
+		equation = "(5+7";
+		calc.setEquationString(equation);
 		expected = "java.util.EmptyStackException Make sure all parenthesis have a matching pair";
 		result= calc.getResult();
 		printTest(true, "Testing getResult() with equation " + equation, result, expected);
@@ -63,22 +73,32 @@ public class CalculatorTester {
 		String expected = "(5*5*2*2)-(2*5)-(5*2*(2+3+4)) = 0";
 		printTest(true, "testing toString() with valid equation " + equation, result, expected);
 		
-		calc.setEquationString("1/0");
+		equation = "0 + 12345";
+		calc.setEquationString(equation);
+		expected = "0 + 12345 = 12345";
+		result= calc.toString();
+		printTest(true, "Testing getResult() with equation " + equation, result, expected);
+		
+		equation = "1/0";
+		calc.setEquationString(equation);
 		expected = "1/0 = Java.lang.ArithmeticException: / by zero";
 		result= calc.toString();
 		printTest(true, "Testing getResult() with equation " + equation, result, expected);
 		
-		calc.setEquationString("5++5");
+		equation = "5++5";
+		calc.setEquationString(equation);
 		expected = "5++5 = Error: cannot have two adjacent signs";
 		result= calc.toString();
 		printTest(true, "Testing getResult() with equation " + equation, result, expected);
 		
-		calc.setEquationString("5+7)");
+		equation = "5+7)";
+		calc.setEquationString(equation);
 		expected = "5+7) = java.util.EmptyStackException Make sure all parenthesis have a matching pair";
 		result= calc.toString();
 		printTest(true, "Testing getResult() with equation " + equation, result, expected);
 		
-		calc.setEquationString("(5+7");
+		equation = "(5+7";
+		calc.setEquationString(equation);
 		expected = "(5+7 = java.util.EmptyStackException Make sure all parenthesis have a matching pair";
 		result= calc.toString();
 		printTest(true, "Testing getResult() with equation " + equation, result, expected);
