@@ -43,7 +43,7 @@ public class Calculator
 		boolean hasSignToCompare = 	false ;	//true if a previous operand has yet to be computed in the string
 		boolean valid = 			true ;	//set to false if given string is found to be an invalid equation
 		char current ;						//current character in iterator
-		
+		boolean tempHasSignToCompare = false;
 		for ( int i = 0; i < equationString.length() && valid; i++ )
 		{
 			current = equationString.charAt( i ) ;
@@ -67,7 +67,7 @@ public class Calculator
 						solveEquation( numbers, operands );
 					}
 					operands.pop() ; //removes '(' from operands stack
-					hasSignToCompare = false;
+					hasSignToCompare = tempHasSignToCompare;
 				}//end if
 				else if ( isSign( current ) )
 				{
@@ -107,6 +107,7 @@ public class Calculator
 				else if ( current == '(' )
 				{
 					operands.push( current ) ;
+					tempHasSignToCompare = hasSignToCompare;
 					hasSignToCompare = false;
 				}
 				else if ( isSign( current ) )
