@@ -67,6 +67,7 @@ public class Calculator
 						solveEquation( numbers, operands );
 					}
 					operands.pop() ; //removes '(' from operands stack
+					hasSignToCompare = false;
 				}//end if
 				else if ( isSign( current ) )
 				{
@@ -106,6 +107,7 @@ public class Calculator
 				else if ( current == '(' )
 				{
 					operands.push( current ) ;
+					hasSignToCompare = false;
 				}
 				else if ( isSign( current ) )
 				{
