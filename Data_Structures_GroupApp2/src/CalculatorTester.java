@@ -10,6 +10,7 @@ public class CalculatorTester {
 	public static void main(String[] args) {
 		System.out.println("Testing Calculator");
 		testConstructors();
+		testSetter();
 		testGetters();
 		testToString();
 	}//end main
@@ -22,6 +23,10 @@ public class CalculatorTester {
 		Calculator calc1 = new Calculator(equation1);
 		printTest(true, "Testing String constructor with equation " + equation1, equation1, calc1.getEquationString());
 	}//end testConstructors()
+	
+	private static void testSetter() {
+		
+	}
 	
 	private static void testGetters() {
 		System.out.println("\n----------\nTesting getters");
@@ -63,6 +68,12 @@ public class CalculatorTester {
 		expected = "java.util.EmptyStackException Make sure all parenthesis have a matching pair";
 		result= calc.getResult();
 		printTest(true, "Testing getResult() with equation " + equation, result, expected);
+		
+		equation = "x";
+		calc.setEquationString(equation);
+		expected = "Error: Invalid character entered";
+		result= calc.getResult();
+		printTest(true, "Testing getResult() with equation " + equation, result, expected);
 	}//end testGetters()
 	
 	private static void testToString() {
@@ -100,6 +111,12 @@ public class CalculatorTester {
 		equation = "(5+7";
 		calc.setEquationString(equation);
 		expected = "(5+7 = java.util.EmptyStackException Make sure all parenthesis have a matching pair";
+		result= calc.toString();
+		printTest(true, "Testing getResult() with equation " + equation, result, expected);
+		
+		equation = "x";
+		calc.setEquationString(equation);
+		expected = "x = Error: Invalid character entered";
 		result= calc.toString();
 		printTest(true, "Testing getResult() with equation " + equation, result, expected);
 	}//end tesToString

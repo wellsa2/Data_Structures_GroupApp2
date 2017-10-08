@@ -102,7 +102,7 @@ public class Calculator
 				else
 				{
 					valid = false ;
-					System.out.println( "Invalid character entered." ) ;
+					return "Error: Invalid character entered";
 				}//end else
 			}//end if
 			else //lastWasNum = false
@@ -125,7 +125,7 @@ public class Calculator
 				}//end else if
 				else
 				{
-					
+					return "Error: Invalid character entered";
 				}//end else
 			}//end else
 		}//end for
