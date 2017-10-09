@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="384.0" prefWidth="240.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <Button fx:id="clear" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#displayClear" prefHeight="60.0" prefWidth="60.0" text="C" />
+      <Button fx:id="backspace" layoutX="60.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#displayBackspace" prefHeight="60.0" prefWidth="60.0" text="&lt;" />
+      <Button fx:id="quit" layoutX="120.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#quitCalculator" prefHeight="60.0" prefWidth="60.0" text="Q" />
+      <Button fx:id="divide" layoutX="180.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#displayDivide" prefHeight="60.0" prefWidth="60.0" text="/" />
+      <Button fx:id="seven" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#displaySeven" prefHeight="60.0" prefWidth="60.0" text="7" />
+      <Button fx:id="eight" layoutX="60.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#displayEight" prefHeight="60.0" prefWidth="60.0" text="8" />
+      <Button fx:id="nine" layoutX="120.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#displayNine" prefHeight="60.0" prefWidth="60.0" text="9" />
+      <Button fx:id="multiply" layoutX="180.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#displayMultiply" prefHeight="60.0" prefWidth="60.0" text="*" />
+      <Button fx:id="four" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#displayFour" prefHeight="60.0" prefWidth="60.0" text="4" />
+      <Button fx:id="five" layoutX="60.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#displayFive" prefHeight="60.0" prefWidth="60.0" text="5" />
+      <Button fx:id="six" layoutX="120.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#displaySix" prefHeight="60.0" prefWidth="60.0" text="6" />
+      <Button fx:id="subtract" layoutX="180.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#displaySubtract" prefHeight="60.0" prefWidth="60.0" text="-" />
+      <Button fx:id="one" layoutY="264.0" mnemonicParsing="false" onMouseClicked="#displayOne" prefHeight="60.0" prefWidth="60.0" text="1" />
+      <Button fx:id="two" layoutX="60.0" layoutY="264.0" mnemonicParsing="false" onMouseClicked="#displayTwo" prefHeight="60.0" prefWidth="60.0" text="2" />
+      <Button fx:id="three" layoutX="120.0" layoutY="264.0" mnemonicParsing="false" onMouseClicked="#displayThree" prefHeight="60.0" prefWidth="60.0" text="3" />
+      <Button fx:id="add" layoutX="180.0" layoutY="264.0" mnemonicParsing="false" onMouseClicked="#displayAdd" prefHeight="60.0" prefWidth="60.0" text="+" />
+      <Button fx:id="zero" layoutY="324.0" mnemonicParsing="false" onMouseClicked="#displayZero" prefHeight="60.0" prefWidth="60.0" text="0" />
+      <Button fx:id="openParen" layoutX="60.0" layoutY="324.0" mnemonicParsing="false" onMouseClicked="#displayOpenParen" prefHeight="60.0" prefWidth="60.0" text="(" />
+      <Button fx:id="closeParen" layoutX="120.0" layoutY="324.0" mnemonicParsing="false" onMouseClicked="#displayCloseParen" prefHeight="60.0" prefWidth="60.0" text=")" />
+      <Button fx:id="equals" layoutX="180.0" layoutY="324.0" mnemonicParsing="false" onMouseClicked="#displaySolve" prefHeight="60.0" prefWidth="60.0" text="=" />
+      <TextArea fx:id="display" layoutY="-1.0" prefHeight="85.0" prefWidth="240.0" />
+   </children>
+</Pane>
