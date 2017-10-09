@@ -88,7 +88,7 @@ public class Calculator
 				if ( current == ' ' )
 				{
 					//keep empty. makes sure spaces aren't treated as an error
-				}//end else if
+				}//end if
 				else if ( lastWasNum )
 				{
 					if ( Character.isDigit( current ) ) //multi-digit numbers
@@ -231,9 +231,9 @@ public class Calculator
 	 * @param operands
 	 * @author wellsa
 	 */
-	private void solveEquation( 	VectorStack<Integer> numbers,		//If the vector stacks aren't referencing the original addresses correctly,
-									VectorStack<Character> operands )	//convert this method to return an int, being fed the parameters of two
-	{																	//popped ints and one popped operand char
+	private void solveEquation( 	VectorStack<Integer> numbers,		
+									VectorStack<Character> operands )	
+	{																	
 		int rightValue = 	numbers.pop();
 		int leftValue = 	numbers.pop();
 		char operand = 		operands.pop();
