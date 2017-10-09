@@ -1,12 +1,23 @@
+// COMP 2000 - 03
+// VectorStack Application 2
+// Group 32
+// Avery Loftin
+// 10/9/2017
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
+
+/**
+ * A controller class for the CalculatorGUI fxml file
+ */
 public class Controller {
 
-    Calculator calculator = new Calculator();
+    private Calculator calculator = new Calculator();
 
+    // makes controls on GUI accessible
     @FXML
     TextArea display;
     @FXML
@@ -23,111 +34,191 @@ public class Controller {
     Button zero, one, two, three, four, five, six, seven, eight, nine;
 
 
-    public void displayClear() {
+    /**
+     * clears the calculator's display
+     */
+    public void displayClear()
+    {
         display.setText("");
-    }
+    } // end displayClear
 
 
-    public void displayBackspace() {
+    /**
+     * deletes the last character typed to the display
+     */
+    public void displayBackspace()
+    {
         display.setText(display.getText().substring(0, display.getText().length() - 1));
-    }
+    } // end displayBackspace
 
 
-    public void displayZero() {
+    /**
+     * writes digit zero to the display
+     */
+    public void displayZero()
+    {
         display.setText(display.getText() + "0");
-    }
+    } // end displayZero
 
 
-    public void displayOne() {
+    /**
+     * writes digit one to the display
+     */
+    public void displayOne()
+    {
         display.setText(display.getText() + "1");
-    }
+    } // end displayOne
 
 
-    public void displayTwo() {
+    /**
+     * writes digit two to the display
+     */
+    public void displayTwo()
+    {
         display.setText(display.getText() + "2");
-    }
+    } // end displayTwo
 
 
-    public void displayThree() {
+    /**
+     * writes digit three to the display
+     */
+    public void displayThree()
+    {
         display.setText(display.getText() + "3");
-    }
+    } // end displayThree
 
 
-    public void displayFour() {
+    /**
+     * writes digit four to the display
+     */
+    public void displayFour()
+    {
         display.setText(display.getText() + "4");
-    }
+    } // end displayFour
 
 
-    public void displayFive() {
+    /**
+     * writes digit five to the display
+     */
+    public void displayFive()
+    {
         display.setText(display.getText() + "5");
-    }
+    } // end displayFive
 
 
-    public void displaySix() {
+    /**
+     * writes digit six to the display
+     */
+    public void displaySix()
+    {
         display.setText(display.getText() + "6");
-    }
+    } // end displaySix
 
 
-    public void displaySeven() {
+    /**
+     * writes digit seven to the display
+     */
+    public void displaySeven()
+    {
         display.setText(display.getText() + "7");
-    }
+    } // end displaySeven
 
 
-    public void displayEight() {
+    /**
+     * writes digit eight to the display
+     */
+    public void displayEight()
+    {
         display.setText(display.getText() + "8");
-    }
+    } // end displayEight
 
 
-    public void displayNine() {
+    /**
+     * writes digit nine to the display
+     */
+    public void displayNine()
+    {
         display.setText(display.getText() + "9");
-    }
+    } // end displayNine
 
 
-    public void displayOpenParen() {
+    /**
+     * writes open parenthesis to the display
+     */
+    public void displayOpenParen()
+    {
         display.setText(display.getText() + "(");
-    }
+    } // end displayOpenParen
 
 
-    public void displayCloseParen() {
+    /**
+     * writes close parenthesis to the display
+     */
+    public void displayCloseParen()
+    {
         display.setText(display.getText() + ")");
-    }
+    } // end displayCloseParen
 
 
-    public void displayDivide() {
+    /**
+     * writes division sign to the display
+     */
+    public void displayDivide()
+    {
         display.setText(display.getText() + "/");
-    }
+    } // end displayDivide
 
 
-    public void displayMultiply() {
+    /**
+     * writes multiplication sign to the display
+     */
+    public void displayMultiply()
+    {
         display.setText(display.getText() + "*");
-    }
+    } // end displayMultiply
 
 
-    public void displayAdd() {
+    /**
+     * writes addition sign to the display
+     */
+    public void displayAdd()
+    {
         display.setText(display.getText() + "+");
-    }
+    } // end displayAdd
 
 
-    public void displaySubtract() {
+    /**
+     * writes subtraction sign to the display
+     */
+    public void displaySubtract()
+    {
         display.setText(display.getText() + "-");
-    }
+    } // end displaySubtract
 
 
-    public void displaySolve() {
+    /**
+     * solves the current equation on the screen using calculator
+     */
+    public void displaySolve()
+    {
         calculator.setEquationString(display.getText());
         if (calculator.getResult().equals("java.lang.ArithmeticException: / by zero"))
         {
            display.setText(calculator.getEquationString() + " = " + "Error: Cannot divide by zero");
-        }
+        } // end if
         else
         {
             display.setText(calculator.toString());
-        }
-    }
+        } // end else
+    } // end displaySolve
 
 
-    public void quitCalculator() {
+    /**
+     * ends the calculator GUI
+     */
+    public void quitCalculator()
+    {
         Stage stage = (Stage) quit.getScene().getWindow();
         stage.close();
-    }
-}
+    } // end quitCalculator
+} // end Controller
