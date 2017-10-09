@@ -10,11 +10,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
-
 
 /**
  * main class to run a gui and solve the invalid multi digit file with the calculator class
@@ -88,4 +86,3 @@ public class Main extends Application{
 		primaryStage.show();
 	} // end start
 } // end Main
-		
