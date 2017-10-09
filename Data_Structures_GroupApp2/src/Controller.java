@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 /**
  * A controller class for the CalculatorGUI fxml file
+ * @author Avery Loftin
  */
 public class Controller {
 
