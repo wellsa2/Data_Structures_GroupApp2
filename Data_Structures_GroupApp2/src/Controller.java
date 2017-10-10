@@ -4,35 +4,35 @@
 // Avery Loftin
 // 10/9/2017
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.stage.Stage;
+import javafx.fxml.FXML ;
+import javafx.scene.control.Button ;
+import javafx.scene.control.TextArea ;
+import javafx.stage.Stage ;
 
 
 /**
  * A controller class for the CalculatorGUI fxml file
  * @author Avery Loftin
  */
-public class Controller {
-
-    private Calculator calculator = new Calculator();
+public class Controller
+{
+    private Calculator calculator = new Calculator() ;
 
     // makes controls on GUI accessible
     @FXML
-    TextArea display;
+    TextArea display ;
     @FXML
-    Button clear;
+    Button clear ;
     @FXML
-    Button backspace;
+    Button backspace ;
     @FXML
-    Button quit;
+    Button quit ;
     @FXML
-    Button divide, multiply, add, subtract;
+    Button divide, multiply, add, subtract ;
     @FXML
-    Button openParen, closeParen;
+    Button openParen, closeParen ;
     @FXML
-    Button zero, one, two, three, four, five, six, seven, eight, nine;
+    Button zero, one, two, three, four, five, six, seven, eight, nine ;
 
 
     /**
@@ -40,7 +40,7 @@ public class Controller {
      */
     public void displayClear()
     {
-        display.setText("");
+        display.setText( "" ) ;
     } // end displayClear
 
 
@@ -49,7 +49,7 @@ public class Controller {
      */
     public void displayBackspace()
     {
-        display.setText(display.getText().substring(0, display.getText().length() - 1));
+        display.setText( display.getText().substring( 0, display.getText().length() - 1 ) ) ;
     } // end displayBackspace
 
 
@@ -58,7 +58,7 @@ public class Controller {
      */
     public void displayZero()
     {
-        display.setText(display.getText() + "0");
+        display.setText( display.getText() + "0" ) ;
     } // end displayZero
 
 
@@ -67,7 +67,7 @@ public class Controller {
      */
     public void displayOne()
     {
-        display.setText(display.getText() + "1");
+        display.setText( display.getText() + "1" ) ;
     } // end displayOne
 
 
@@ -76,7 +76,7 @@ public class Controller {
      */
     public void displayTwo()
     {
-        display.setText(display.getText() + "2");
+        display.setText( display.getText() + "2" ) ;
     } // end displayTwo
 
 
@@ -85,7 +85,7 @@ public class Controller {
      */
     public void displayThree()
     {
-        display.setText(display.getText() + "3");
+        display.setText( display.getText() + "3" ) ;
     } // end displayThree
 
 
@@ -94,7 +94,7 @@ public class Controller {
      */
     public void displayFour()
     {
-        display.setText(display.getText() + "4");
+        display.setText( display.getText() + "4" ) ;
     } // end displayFour
 
 
@@ -103,7 +103,7 @@ public class Controller {
      */
     public void displayFive()
     {
-        display.setText(display.getText() + "5");
+        display.setText( display.getText() + "5" ) ;
     } // end displayFive
 
 
@@ -112,7 +112,7 @@ public class Controller {
      */
     public void displaySix()
     {
-        display.setText(display.getText() + "6");
+        display.setText( display.getText() + "6" ) ;
     } // end displaySix
 
 
@@ -121,7 +121,7 @@ public class Controller {
      */
     public void displaySeven()
     {
-        display.setText(display.getText() + "7");
+        display.setText( display.getText() + "7" ) ;
     } // end displaySeven
 
 
@@ -130,7 +130,7 @@ public class Controller {
      */
     public void displayEight()
     {
-        display.setText(display.getText() + "8");
+        display.setText( display.getText() + "8" ) ;
     } // end displayEight
 
 
@@ -139,7 +139,7 @@ public class Controller {
      */
     public void displayNine()
     {
-        display.setText(display.getText() + "9");
+        display.setText( display.getText() + "9" ) ;
     } // end displayNine
 
 
@@ -148,7 +148,7 @@ public class Controller {
      */
     public void displayOpenParen()
     {
-        display.setText(display.getText() + "(");
+        display.setText( display.getText() + "(" ) ;
     } // end displayOpenParen
 
 
@@ -157,7 +157,7 @@ public class Controller {
      */
     public void displayCloseParen()
     {
-        display.setText(display.getText() + ")");
+        display.setText( display.getText() + ")" ) ;
     } // end displayCloseParen
 
 
@@ -166,7 +166,7 @@ public class Controller {
      */
     public void displayDivide()
     {
-        display.setText(display.getText() + "/");
+        display.setText( display.getText() + "/" ) ;
     } // end displayDivide
 
 
@@ -175,7 +175,7 @@ public class Controller {
      */
     public void displayMultiply()
     {
-        display.setText(display.getText() + "*");
+        display.setText( display.getText() + "*" ) ;
     } // end displayMultiply
 
 
@@ -184,7 +184,7 @@ public class Controller {
      */
     public void displayAdd()
     {
-        display.setText(display.getText() + "+");
+        display.setText( display.getText() + "+" ) ;
     } // end displayAdd
 
 
@@ -193,7 +193,7 @@ public class Controller {
      */
     public void displaySubtract()
     {
-        display.setText(display.getText() + "-");
+        display.setText( display.getText() + "-" ) ;
     } // end displaySubtract
 
 
@@ -202,14 +202,14 @@ public class Controller {
      */
     public void displaySolve()
     {
-        calculator.setEquationString(display.getText());
-        if (calculator.getResult().equals("java.lang.ArithmeticException: / by zero"))
+        calculator.setEquationString( display.getText() ) ;
+        if ( calculator.getResult().equals( "java.lang.ArithmeticException: / by zero" ) )
         {
-           display.setText(calculator.getEquationString() + " = " + "Error: Cannot divide by zero");
+           display.setText( calculator.getEquationString() + " = " + "Error: Cannot divide by zero" ) ;
         } // end if
         else
         {
-            display.setText(calculator.toString());
+            display.setText( calculator.toString() ) ;
         } // end else
     } // end displaySolve
 
@@ -219,7 +219,7 @@ public class Controller {
      */
     public void quitCalculator()
     {
-        Stage stage = (Stage) quit.getScene().getWindow();
-        stage.close();
+        Stage stage = ( Stage ) quit.getScene().getWindow() ;
+        stage.close() ;
     } // end quitCalculator
 } // end Controller
