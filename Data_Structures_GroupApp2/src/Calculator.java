@@ -79,7 +79,7 @@ public class Calculator
 		boolean lastWasNum = 			false ;	//true if last character was a number
 		boolean hasSignToCompare = 		false ;	//true if a previous operator has yet to be computed in the string
 		char current ;							//current character in iterator
-		
+		boolean hasNum =				false ; //boolean value for error return message
 		try 
 		{
 			for ( int i = 0 ; i < equationString.length() ; i++ )
@@ -97,6 +97,7 @@ public class Calculator
 						int toFormat = numbers.pop() ;
 						toFormat = toFormat * 10 + current - '0' ;
 						numbers.push( toFormat ) ;
+						hasNum = true;
 					} //end if
 					else if ( current == ')' )
 					{
@@ -138,6 +139,7 @@ public class Calculator
 				{
 					if ( Character.isDigit( current ) )
 					{
+						hasNum = true;
 						lastWasNum = true ;
 						numbers.push( current - '0' ) ;
 					} //end if
@@ -149,7 +151,12 @@ public class Calculator
 					} //end else if
 					else if ( isOperator( current ) )
 					{
+						if(hasNum) {
 						return "Error: cannot have two adjacent signs" ;
+						}
+						else {
+							return "Error: equation must start with a number";
+						}
 					} //end else if
 					else
 					{
@@ -167,7 +174,7 @@ public class Calculator
 			return ae.toString() ;
 		} //end catch ArithmeticException
 		catch (EmptyStackException ese) {
-			return ese.toString() + " Make sure all parenthesis have a matching pair" ;
+			return ese.toString() + " Make sure all parenthesis have a matching pair, and all operators have a pair of numbers" ;
 		} //end catch EmptyStackException
 		return numbers.pop().toString() ;
 	} //end getResult
